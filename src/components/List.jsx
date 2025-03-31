@@ -160,4 +160,4 @@ function List() {
   );
 }
 
-export default Lis
+export default List
