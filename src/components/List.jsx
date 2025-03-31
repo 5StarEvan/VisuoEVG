@@ -1,114 +1,123 @@
 import React, { useState, useEffect } from 'react';
+import {returnHome, clearSearch, search, searchEvL} from '../context/list.js';
 
 function List() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [showNoResults, setShowNoResults] = useState(false);
 
-  const handleSearch = () => {
+  const [searchQ, setSearchQ] = useState('');
+  const [NoResults, setShowNR] = useState(false);
 
-    setShowNoResults(searchQuery.trim() === '');
-  };
+  useEffect(() => {
+    searchEvL();
+  }, []);
 
-  const clearSearch = () => {
-    setSearchQuery('');
-    setShowNoResults(false);
-  };
+  function Search() {
+    search();
+    const noResultsElement = document.getElementById('noResults');
+    setShowNR(!noResultsElement.classList.contains('hidden'));
+  }
 
-  const returnHome = () => {
+  function searchTextClear() {
+    clearSearch();
+    setSearchQ('');
+    setShowNR(false);
+  }
 
-    console.log('Returning to home');
-  };
+  function returnHomePage() {
+    returnHome();
+  }
 
   return (
-    <>
+    <div className="app-container">
       <header className="header">
         <div className="home-button">
-          <button className="button" onClick={returnHome}>Return To Home</button>
+          <button className="button" onClick={returnHomePage}>Return To Home</button>
         </div>
         <h1>Data Structure Visualizer</h1>
         <p className="subtitle">Explore and learn different data structures</p>
       </header>
 
-      <div className="search-container">
-        <div className="search-box">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Search data structures..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button
-            id="clearButton"
-            className="clear-button"
-            title="Clear search"
-            onClick={clearSearch}
-          >
-            Clear
+      <main className="main-content">
+        <div className="search-container">
+          <div className="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search data structures..."
+              value={searchQ}
+              onChange={(e) => setSearchQ(e.target.value)}
+            />
+            <button
+              id="clearButton"
+              className="clear-button"
+              title="Clear search"
+              onClick={searchTextClear}
+            >
+              Clear
+            </button>
+          </div>
+          <button id="searchButton" className="search-button" onClick={Search}>
+            Search
           </button>
         </div>
-        <button id="searchButton" className="search-button" onClick={handleSearch}>
-          Search
-        </button>
-      </div>
 
-      <div id="noResults" className={`no-results ${showNoResults ? '' : 'hidden'}`}>
-        <p>No data structures found matching your search.</p>
-      </div>
+        <div id="noResults" className={`no-results ${NoResults ? '' : 'hidden'}`}>
+          <p>No data structures found matching your search.</p>
+        </div>
 
-      <h2 className="Information-Header" id="Data-Structure-Header">
-        Data Structures
-      </h2>
-      <div className="data-structure-grid-container">
-        <a href="/linkedlist" className="Data-Structure-Link" id="LinkedList-Structure-Link">
-          <div className="icon-container">
-            LinkedList
-          </div>
-          <h3>LinkedList</h3>
-        </a>
-        <a href="/stack" className="Data-Structure-Link" id="Stack-Structure-Link">
-          <div className="icon-container">
-            Stack
-          </div>
-          <h3>Stack</h3>
-        </a>
-        <a href="/queue" className="Data-Structure-Link" id="Queue-Structure-Link">
-          <div className="icon-container">
-            Queue
-          </div>
-          <h3>Queue</h3>
-        </a>
-        <a href="/tree" className="Data-Structure-Link" id="Tree-Structure-Link">
-          <div className="icon-container">
-            Tree
-          </div>
-          <h3>Tree</h3>
-        </a>
-        <a href="/graph" className="Data-Structure-Link" id="Graph-Structure-Link">
-          <div className="icon-container">
-            Graph
-          </div>
-          <h3>Graph</h3>
-        </a>
-      </div>
+        <h2 className="Information-Header" id="Data-Structure-Header">
+          Data Structures
+        </h2>
+        <div className="data-structure-grid-container">
+          <a href="/linkedlist" className="Data-Structure-Link" id="LinkedList-Structure-Link">
+            <div className="icon-container">
+              LinkedList
+            </div>
+            <h3>LinkedList</h3>
+          </a>
+          <a href="/stack" className="Data-Structure-Link" id="Stack-Structure-Link">
+            <div className="icon-container">
+              Stack
+            </div>
+            <h3>Stack</h3>
+          </a>
+          <a href="/queue" className="Data-Structure-Link" id="Queue-Structure-Link">
+            <div className="icon-container">
+              Queue
+            </div>
+            <h3>Queue</h3>
+          </a>
+          <a href="/tree" className="Data-Structure-Link" id="Tree-Structure-Link">
+            <div className="icon-container">
+              Tree
+            </div>
+            <h3>Tree</h3>
+          </a>
+          <a href="/graph" className="Data-Structure-Link" id="Graph-Structure-Link">
+            <div className="icon-container">
+              Graph
+            </div>
+            <h3>Graph</h3>
+          </a>
+        </div>
 
-      <h2 className="Information-Header" id="Algorithm-Header">
-        Algorithms
-      </h2>
-      <div className="algorithm-grid-container">
-        <a href="/dfs" className="Algorithm-Link" id="DFS-Link">
-          <div className="icon-container">
-            DFS
-          </div>
-          <h3>DFS</h3>
-        </a>
-        <a href="/bfs" className="Algorithm-Link" id="BFS-Link">
-          <div className="icon-container">
-            BFS
-          </div>
-          <h3>BFS</h3>
-        </a>
-      </div>
+        <h2 className="Information-Header" id="Algorithm-Header">
+          Algorithms
+        </h2>
+        <div className="algorithm-grid-container">
+          <a href="/dfs" className="Algorithm-Link" id="DFS-Link">
+            <div className="icon-container">
+              DFS
+            </div>
+            <h3>DFS</h3>
+          </a>
+          <a href="/bfs" className="Algorithm-Link" id="BFS-Link">
+            <div className="icon-container">
+              BFS
+            </div>
+            <h3>BFS</h3>
+          </a>
+        </div>
+      </main>
 
       <footer className="footer" id="contact">
         <div className="footer-content">
@@ -147,8 +156,8 @@ function List() {
           </ul>
         </div>
       </footer>
-    </>
+    </div>
   );
 }
 
-export default List;
+export default Lis

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import {addValue, removeValue, searchValue, reset, display, initDisplay} from '../context/Linkedlist.js';
+import {addValue, removeValue, searchValue, reset, display, initDisplay} from '../context/linkedlist.js';
 
 function Linkedlist() {
 
@@ -25,10 +25,6 @@ function Linkedlist() {
     };
 
   }, []);
-
-
-
-
 
 
   function home() {
