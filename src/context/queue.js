@@ -7,6 +7,11 @@ function list(){
     window.location.href = "list.html";
 }
 
+function initDisplay(container) {
+  visualContainer = container;
+  display();
+}
+
 
 function displayR(message, isSuccess = false) {
     const elementData = document.getElementById("addedElements");
@@ -341,33 +346,6 @@ function display(isEnqueue = false, dequeuedValue = null) {
     }
 }
 
-
-window.onload = function() {
-    
-    if (!document.getElementById("queue-container")) {  
-        
-        const queueContainer = document.createElement("div"); 
-        queueContainer.id = "queue-container";
-        document.body.appendChild(queueContainer);
-
-    }
-    
-    
-    if (!document.getElementById("addedElements")) {
-
-        const elementData = document.createElement("div");
-        elementData.id = "addedElements";
-        elementData.style.display = "none";
-        document.body.appendChild(elementData);
-
-    }
-    document.body.style.minHeight = "100vh";
-    document.body.style.margin = "0";
-    document.body.style.padding = "0";
-    document.body.style.position = "relative";
-    
-    display();
-};
-
-
 window.addEventListener('resize', function() { display(); });
+
+export {home, list , initDisplay, reset, addValue, removeValue , display}

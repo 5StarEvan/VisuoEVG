@@ -10,20 +10,15 @@ function Linkedlist() {
 
   useEffect(() => {
 
-    const style = document.createElement('style');
-    document.head.appendChild(style);
-
     if (visualRef.current) {
       initDisplay(visualRef.current);
-
       display();
-
     }
 
     return () => {
-      document.head.removeChild(style);
+      window.removeEventListener('resize', display);
     };
-
+    
   }, []);
 
 
