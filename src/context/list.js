@@ -1,5 +1,5 @@
 function returnHome() {
-    document.location.href = "home.html";
+    document.location.href = "home";
 }
 
 function clearSearch() {
