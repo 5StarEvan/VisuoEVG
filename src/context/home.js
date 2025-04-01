@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     element.style.opacity = '1';
                     element.style.transform = 'perspective(500px) rotateX(0deg)';
                 } else {
-                    // Advanced zoom and slide animation
+                   
                     element.style.animation = 'zoomInSlide 0.8s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94)';
                 }
             }

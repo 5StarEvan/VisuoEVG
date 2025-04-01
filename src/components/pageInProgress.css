@@ -84,7 +84,7 @@ p {
     animation: pulse 2s infinite;
 }
 
-/* Loader styles */
+
 .loader {
     display: flex;
     justify-content: center;

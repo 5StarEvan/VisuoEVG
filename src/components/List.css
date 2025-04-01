@@ -8,7 +8,7 @@
   --error-color: #dc2626; 
   --background-light: #f9fafb; 
   --background-dark: #1f2937; 
-  --visual-bg-dark: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.9)); /* Darker grey gradient for visual */
+  --visual-bg-dark: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.9)); 
   --card-bg: #ffffff;
   --text-primary: #111827; 
   --text-secondary: #374151; 
@@ -346,7 +346,7 @@ input::placeholder {
   display: none;
 }
 
-/* Footer */
+
 .footer {
   background-color: var(--background-dark);
   color: rgba(255, 255, 255, 0.8);
@@ -438,7 +438,7 @@ input::placeholder {
   font-size: 0.875rem;
 }
 
-/* Media Queries */
+
 @media (max-width: 992px) {
   .user-input {
     flex-direction: column;
