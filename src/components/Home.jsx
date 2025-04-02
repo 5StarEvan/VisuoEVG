@@ -14,7 +14,7 @@ function Home() {
     <div className="app-container">
 
       <nav className="nav-bar">
-        <div className="title">VisuoEG</div>
+        <div className="title">VisuoEVG</div>
         <ul className="navbar-links" id="navLinks">
           <li><a href="#home" className="navbar-link">Home</a></li>
           <li><a href="#features" className="navbar-link">Features</a></li>

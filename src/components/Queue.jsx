@@ -39,7 +39,7 @@ function Queue() {
       </div>
       
       <div className="visual" ref={visualRef}>
-        <div className="element-data" id="addedElements"></div>
+        <div className="element-data" id="adsdedElements"></div>
       </div>
     </div>
   );
