@@ -6,13 +6,12 @@
 }
 
 body {
-    background: #f5f5f7; 
+    background: #f5f5f7;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
 }
-
 
 .visual {
     width: 100%;
@@ -31,13 +30,12 @@ body {
     flex: 1;
 }
 
-
 .element-data {
     width: 90%;
     max-width: 600px;
-    background: rgba(75, 85, 99, 0.8); 
+    background: rgba(75, 85, 99, 0.8);
     border: 2px solid #374151; 
-    display: none;
+    display: none; 
     align-items: center;
     justify-content: center;
     font-size: 18px;
@@ -56,7 +54,6 @@ body {
     transform: translateY(5px);
     box-shadow: 0 8px 25px rgba(55, 65, 81, 0.4); 
 }
-
 
 .user-input {
     width: 100%;
@@ -106,12 +103,10 @@ input[type="text"]:focus {
     transform: translateY(-2px);
 }
 
-
 input::placeholder {
     color: #9ca3af; 
     font-size: 14px;
 }
-
 
 .button {
     background: linear-gradient(135deg, #4b5563, #6b7280); 
@@ -138,7 +133,6 @@ input::placeholder {
     transform: translateY(0);
 }
 
-
 .action-buttons {
     display: flex;
     gap: 8px;
@@ -151,14 +145,6 @@ input::placeholder {
     gap: 8px;
     flex-wrap: wrap;
 }
-
-
-#home-button {
-    position: relative;
-    top: 20px;
-    margin-left: 15px;
-}
-
 
 @media (max-width: 992px) {
     .user-input {

@@ -3,6 +3,7 @@ import Home from "./components/Home.jsx";
 import List from "./components/List.jsx"
 import Linkedlist from "./components/Linkedlist.jsx";
 import Queue from "./components/Queue.jsx";
+import Stack from "./components/Stack.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/list" element={<List/>} />
         <Route path="/linkedlist" element={<Linkedlist/>} />\
         <Route path="/queue" element={<Queue/>} />
+        <Route path="/stack" element={<Stack/>} />
 
       </Routes>
     </Router>
