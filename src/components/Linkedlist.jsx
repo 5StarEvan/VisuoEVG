@@ -3,9 +3,6 @@ import {addValue, removeValue, searchValue, reset, display, initDisplay} from '.
 
 function Linkedlist() {
 
-  /*
-    Setting up inital display of the body and the svg
-  */
   const visualRef = useRef(null);
 
   useEffect(() => {
@@ -33,6 +30,7 @@ function Linkedlist() {
   return (
     <>
       <div className="user-input">
+        
         <h1 className="Title">LinkedList Data Structure</h1>
         <div className="input-container">
           <input id="Input-Value" type="text" placeholder="Enter Value" />

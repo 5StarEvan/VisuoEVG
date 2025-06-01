@@ -20,6 +20,7 @@ function Stack() {
   return (
     <>
       <div className="user-input">
+        
         <h1 className="Title">Stack Data Structure</h1>
         
         <div className="input-container">

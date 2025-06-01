@@ -1,12 +1,9 @@
+import * as d3 from 'd3';
 
-function home() {
-    window.location.href = "home.html";
+function initDisplay(container) {
+  visualContainer = container;
+  display();
 }
-
-function list(){
-    window.location.href = "list.html";
-}
-
 
 function displayR(message, isSuccess = false) {
     const elementData = document.getElementById("addedElements");
@@ -81,7 +78,6 @@ function Reset (){
 }
 
 function display() {    
-
 
     d3.select(".visual").selectAll("svg").remove();
 
@@ -198,10 +194,8 @@ function runDFS(startNum, endNum) {
     return result;  
 }
 
-
 window.onload = function() {
-    
     display();
-
 };
 
+export { startDFSAnimation, Reset, display, initDisplay}

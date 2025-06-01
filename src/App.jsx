@@ -4,6 +4,7 @@ import List from "./components/List.jsx"
 import Linkedlist from "./components/Linkedlist.jsx";
 import Queue from "./components/Queue.jsx";
 import Stack from "./components/Stack.jsx";
+import DFS from "./components/DFS.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/linkedlist" element={<Linkedlist/>} />\
         <Route path="/queue" element={<Queue/>} />
         <Route path="/stack" element={<Stack/>} />
+        <Route path="/dfs" element={<DFS/>} />
 
       </Routes>
     </Router>
