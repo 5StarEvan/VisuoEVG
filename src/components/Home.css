@@ -444,13 +444,6 @@
     font-weight: 500;
   }
   
-  .about-me-description {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 2rem;
-  }
-  
   .contact {
     padding: 8rem 0;
     background-color: var(--background-white);

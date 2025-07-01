@@ -4,7 +4,6 @@ import { startDFSAnimation, Reset, display, initDisplay} from '../context/dfs.js
 function DFS() {
 
   const visualRef = useRef(null);
-
   useEffect(() => {
 
     if (visualRef.current) {
@@ -20,11 +19,11 @@ function DFS() {
 
 
   function home() {
-    window.location.href = "home";
+    navigate('/home');
   }
 
   function list() {
-    window.location.href = "list";
+    navigate('/list');
   }
 
   return (

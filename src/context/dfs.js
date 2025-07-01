@@ -1,4 +1,4 @@
-import * as d3 from 'd3';
+import * as d3 from "d3";
 
 function initDisplay(container) {
   visualContainer = container;
@@ -198,4 +198,4 @@ window.onload = function() {
     display();
 };
 
-export { startDFSAnimation, Reset, display, initDisplay}
+export { startDFSAnimation, Reset, display, initDisplay }

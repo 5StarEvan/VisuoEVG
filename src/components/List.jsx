@@ -112,14 +112,14 @@ function List() {
       <div className="algorithm-grid-container">
         <a href="/dfs" className="Algorithm-Link" id="DFS-Link">
           <div className="icon-container">
-            DFS
+            DFS Algorithm
           </div>
           <h3>DFS</h3>
         </a>
 
         <a href="/bfs" className="Algorithm-Link" id="BFS-Link">
           <div className="icon-container">
-            BFS
+            BFS Algorithm
           </div>
           <h3>BFS</h3>
         </a>

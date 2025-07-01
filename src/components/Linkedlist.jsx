@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import {addValue, removeValue, searchValue, reset, display, initDisplay} from '../context/linkedlist.js';
+import {addValue, removeValue, searchValue, reset, display, initDisplay} from '../context/Linkedlist.js';
 
 function Linkedlist() {
 

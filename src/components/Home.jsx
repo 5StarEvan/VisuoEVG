@@ -84,10 +84,6 @@ function Home() {
             <div className="about-me">
               <h3 className="about-me-name">Evan Guo</h3>
               <p className="about-me-title">Student</p>
-              <p className="about-me-description">
-                I'm passionate about making complex concepts in computer science accessible to everyone. 
-                I've created this platform to help students and professionals visualize and understand data structures and algorithms.
-              </p>
             </div>
           </div>
         </div>
