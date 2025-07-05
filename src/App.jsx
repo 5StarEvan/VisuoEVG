@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home/>} />
         <Route path="/list" element={<List/>} />
-        <Route path="/linkedlist" element={<Linkedlist/>} />\
+        <Route path="/linkedlist" element={<Linkedlist/>} />
         <Route path="/queue" element={<Queue/>} />
         <Route path="/stack" element={<Stack/>} />
         <Route path="/dfs" element={<DFS/>} />
