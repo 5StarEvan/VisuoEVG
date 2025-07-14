@@ -32,7 +32,6 @@ const dataset = Array.from({ length: numValues }, (_, i) => ({ value: i + 1 }));
 let visualCanvas, twoDArr;
 
 
-
 function startDFSAnimation(){
 
     const startValue = document.getElementById("Start-DFS-Value").value;
@@ -194,8 +193,6 @@ function runDFS(startNum, endNum) {
     return result;  
 }
 
-window.onload = function() {
-    display();
-};
+
 
 export { startDFSAnimation, Reset, display, initDisplay }

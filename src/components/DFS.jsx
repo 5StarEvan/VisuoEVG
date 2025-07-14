@@ -1,14 +1,17 @@
 import React, { useEffect, useRef } from 'react';
-import { startDFSAnimation, Reset, display, initDisplay} from '../context/dfs.js';
+import { useNavigate } from 'react-router-dom';
+import {startDFSAnimation, Reset, display, initDisplay} from '../context/dfs.js';
 
 function DFS() {
 
   const visualRef = useRef(null);
+  const navigate = useNavigate();
+  
   useEffect(() => {
 
     if (visualRef.current) {
-        initDisplay(visualRef.current);
-        display();
+       initDisplay(visualRef.current);
+       display();
     }
 
     return () => {

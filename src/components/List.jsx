@@ -7,9 +7,7 @@ function List() {
   const [searchQ, setSearchQ] = useState('');
   const [NoResults, setShowNR] = useState(false);
 
-  useEffect(() => {
-    searchEvL();
-  }, []);
+  useEffect(() => {searchEvL();}, []);
 
   function Search() {
     search();
@@ -39,8 +37,6 @@ function List() {
       </header>
 
 
-
- 
       <div className="search-container">
         <div className="search-box">
           <input

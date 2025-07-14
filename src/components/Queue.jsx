@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { initDisplay, addValue, removeValue, reset, home, list } from '../context/queue.js';
+import { display } from '../context/Linkedlist.js';
 
 function Queue() {
     
@@ -9,6 +10,7 @@ function Queue() {
 
     if (visualRef.current) {
       initDisplay(visualRef.current);
+      display();
     }
 
  
