@@ -18,7 +18,7 @@ Welcome to VisuoEVG, a platform that provides interactive visualizations for var
 
 - Frontend: React, JavaScript, and D3.js for interactive visualizations.
 
-- Database: MySQL (for storing user data, if needed).
+- Database: MySQL (for storing user data).
 
 # Devopment
 
