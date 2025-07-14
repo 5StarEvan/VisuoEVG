@@ -1,4 +1,66 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+
+const MatrixBackground = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    
+    const setCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    
+    setCanvasSize();
+    window.addEventListener('resize', setCanvasSize);
+    
+    const matrixChars = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()";
+    const fontSize = 14;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = [];
+    
+    for (let i = 0; i < columns; i++) {
+      drops[i] = Math.random() * -100;
+    }
+    
+    const draw = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#00ff00';
+      ctx.font = `${fontSize}px monospace`;
+      
+      for (let i = 0; i < drops.length; i++) {
+        const text = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
+        
+        ctx.fillText(text, x, y);
+        
+        if (y > canvas.height || Math.random() > 0.99) {
+          drops[i] = 0;
+        }
+        
+        drops[i]++;
+      }
+    };
+    
+    const interval = setInterval(draw, 50);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', setCanvasSize);
+    };
+  }, []);
+  
+  return (
+    <canvas
+      ref={canvasRef}
+      className="matrix-background"
+    />
+  );
+};
 
 function Home() {
   
@@ -12,6 +74,7 @@ function Home() {
 
   return (
     <div className="app-container">
+      <MatrixBackground />
 
       <nav className="nav-bar">
         <div className="title">VisuoEVG</div>
@@ -25,7 +88,6 @@ function Home() {
         </ul>
       </nav>
 
-
       <section className="main" id="home">
         <div className="main-content">
           <h1 className="main-title">Visualize Code <span className="text-gradient">Like Never Before</span></h1>
@@ -36,7 +98,6 @@ function Home() {
           </div>
         </div>
       </section>
-
 
       <section className="features" id="features">
         <div className="container">
@@ -52,7 +113,6 @@ function Home() {
               <p className="features-box-description">Allows user control and input</p>
             </div>
 
-
             <div className="features-box" data-aos="fade-up" data-aos-delay="200">
               <div className="features-box-icon">
                 <i className="fas fa-code-branch"></i>
@@ -61,7 +121,6 @@ function Home() {
               <p className="features-box-description">Watch algorithms in action with step-by-step visualization.</p>
             </div>
             
-
             <div className="features-box" data-aos="fade-up" data-aos-delay="300">
               <div className="features-box-icon">
                 <i className="fas fa-database"></i>
@@ -78,7 +137,6 @@ function Home() {
           <h2 className="section-title">About Me</h2>
           <div className="about-content">
             <div className="about-image">
-
               <img src="/api/placeholder/400/400" alt="Profile Picture" className="profile-image" />
             </div>
             <div className="about-me">
@@ -88,7 +146,6 @@ function Home() {
           </div>
         </div>
       </section>
-
 
       <footer className="footer">
         <div className="container">

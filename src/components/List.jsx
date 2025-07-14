@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {returnHome, clearSearch, search, searchEvL} from '../context/list.js';
 
+import { FaLink,FaLayerGroup,FaStream,FaCodeBranch,FaProjectDiagram,FaRoute,FaExpand,FaSearch,FaTimes,FaHome,FaGithub,FaTwitter,FaLinkedin} from 'react-icons/fa';
 
 function List() {
 
@@ -30,7 +31,10 @@ function List() {
     <div className="app-container">
       <header className="header">
         <div className="home-button">
-          <button className="button" onClick={returnHomePage}>Return To Home</button>
+          <button className="button" onClick={returnHomePage}>
+            <FaHome className="inline mr-2" />
+            Return To Home
+          </button>
         </div>
         <h1>Data Structure Visualizer</h1>
         <p className="subtitle">Explore and learn different data structures</p>
@@ -52,10 +56,12 @@ function List() {
             title="Clear search"
             onClick={searchTextClear}
           >
+            <FaTimes className="inline mr-1" />
             Clear
           </button>
         </div>
         <button id="searchButton" className="search-button" onClick={Search}>
+          <FaSearch className="inline mr-2" />
           Search
         </button>
       </div>
@@ -69,35 +75,35 @@ function List() {
       <div className="data-structure-grid-container">
         <a href="/linkedlist" className="Data-Structure-Link" id="LinkedList-Structure-Link">
           <div className="icon-container">
-            LinkedList
+            <FaLink className="text-6xl mb-4 text-blue-600" />
           </div>
           <h3>LinkedList</h3>
         </a>
 
         <a href="/stack" className="Data-Structure-Link" id="Stack-Structure-Link">
           <div className="icon-container">
-            Stack
+            <FaLayerGroup className="text-6xl mb-4 text-green-600" />
           </div>
           <h3>Stack</h3>
         </a>
 
         <a href="/queue" className="Data-Structure-Link" id="Queue-Structure-Link">
           <div className="icon-container">
-            Queue
+            <FaStream className="text-6xl mb-4 text-purple-600" />
           </div>
           <h3>Queue</h3>
         </a>
 
         <a href="/tree" className="Data-Structure-Link" id="Tree-Structure-Link">
           <div className="icon-container">
-            Tree
+            <FaCodeBranch className="text-6xl mb-4 text-orange-600" />
           </div>
           <h3>Tree</h3>
         </a>
 
         <a href="/graph" className="Data-Structure-Link" id="Graph-Structure-Link">
           <div className="icon-container">
-            Graph
+            <FaProjectDiagram className="text-6xl mb-4 text-red-600" />
           </div>
           <h3>Graph</h3>
         </a>
@@ -106,16 +112,20 @@ function List() {
       <h2 className="Information-Header" id="Algorithm-Header">Algorithms</h2>
 
       <div className="algorithm-grid-container">
+
         <a href="/dfs" className="Algorithm-Link" id="DFS-Link">
+        
           <div className="icon-container">
-            DFS Algorithm
+
+            <FaRoute className="text-6xl mb-4 text-indigo-600" />
+            
           </div>
           <h3>DFS</h3>
         </a>
 
         <a href="/bfs" className="Algorithm-Link" id="BFS-Link">
           <div className="icon-container">
-            BFS Algorithm
+            <FaExpand className="text-6xl mb-4 text-teal-600" />
           </div>
           <h3>BFS</h3>
         </a>
@@ -141,12 +151,15 @@ function List() {
             <h4>Connect With Us</h4>
             <div className="social-icons">
               <a href="#" className="social-icon">
+                <FaGithub className="inline mr-1" />
                 GitHub
               </a>
               <a href="#" className="social-icon">
+                <FaTwitter className="inline mr-1" />
                 Twitter
               </a>
               <a href="#" className="social-icon">
+                <FaLinkedin className="inline mr-1" />
                 LinkedIn
               </a>
             </div>
@@ -164,4 +177,4 @@ function List() {
   );
 }
 
-export default List
+export default List;
