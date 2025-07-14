@@ -1,11 +1,14 @@
 import * as d3 from "d3";
 
+let visualContainer = null;
+
 function initDisplay(container) {
   visualContainer = container;
   display();
 }
 
 function displayR(message, isSuccess = false) {
+
     const elementData = document.getElementById("addedElements");
     elementData.textContent = message;
     elementData.style.display = "block";
@@ -14,7 +17,9 @@ function displayR(message, isSuccess = false) {
     if (isSuccess) {
         elementData.style.borderColor = "#00CC66";
         elementData.style.backgroundColor = "rgba(0, 204, 102, 0.2)";
-    } else {
+    } 
+    
+    else {
         elementData.style.borderColor = "#FF9500";
         elementData.style.backgroundColor = "rgba(255, 149, 0, 0.2)";
     }
@@ -72,7 +77,7 @@ function animateDFS(dfsOrder, speed) {
 
 }
 
-function Reset (){
+function reset (){
     window.location.reload();
 }
 
@@ -89,8 +94,6 @@ function display() {
     const gridW = numCol * gridSize;
     const gridH = Math.ceil(dataset.length / numCol) * gridSize;
     
-    
-
     visualCanvas = d3.select(".visual")
         .append("svg")
         .attr("width", visualWidth)
@@ -101,8 +104,7 @@ function display() {
         .style("align-items", "center");
     
 
-    twoDArr = visualCanvas.append("g")
-        .attr("transform", `translate(${(visualWidth - gridW) / 2}, ${(visualHeight - gridH) / 2})`);
+    twoDArr = visualCanvas.append("g").attr("transform", `translate(${(visualWidth - gridW) / 2}, ${(visualHeight - gridH) / 2})`);
 
     twoDArr.selectAll("rect")
         .data(dataset)
@@ -195,4 +197,5 @@ function runDFS(startNum, endNum) {
 
 
 
-export { startDFSAnimation, Reset, display, initDisplay }
+
+export {startDFSAnimation, reset, display, initDisplay};

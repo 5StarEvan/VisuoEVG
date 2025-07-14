@@ -6,6 +6,7 @@ import './components/linkedlist.css'
 import './components/queue.css'
 import './components/stack.css'
 import './components/dfs.css'
+import './components/bfs.css'
 
 import App from './App.jsx'
 

@@ -5,6 +5,7 @@ import Linkedlist from "./components/Linkedlist.jsx";
 import Queue from "./components/Queue.jsx";
 import Stack from "./components/Stack.jsx";
 import DFS from "./components/DFS.jsx";
+import BFS from "./components/BFS.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/queue" element={<Queue/>} />
         <Route path="/stack" element={<Stack/>} />
         <Route path="/dfs" element={<DFS/>} />
+        <Route path="/bfs" element={<BFS/>} />
 
       </Routes>
     </Router>

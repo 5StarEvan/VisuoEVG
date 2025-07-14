@@ -1,14 +1,14 @@
 import * as d3 from 'd3';
 
-function home() {
-    window.location.href = "home.html";
-}
+let visualContainer = null;
 
-function list(){
-    window.location.href = "list.html";
+function initDisplay(container) {
+  visualContainer = container;
+  display();
 }
 
 function displayR(message, isSuccess = false) {
+
     const elementData = document.getElementById("addedElements");
     elementData.textContent = message;
     elementData.style.display = "block";
@@ -16,7 +16,9 @@ function displayR(message, isSuccess = false) {
     if (isSuccess) {
         elementData.style.borderColor = "#00CC66";
         elementData.style.backgroundColor = "rgba(0, 204, 102, 0.2)";
-    } else {
+    } 
+    
+    else {
         elementData.style.borderColor = "#FF9500";
         elementData.style.backgroundColor = "rgba(255, 149, 0, 0.2)";
     }
@@ -31,7 +33,9 @@ const dataset = Array.from({ length: numValues }, (_, i) => ({ value: i + 1 }));
 
 let visualCanvas, twoDArr;
 
+
 function startBFSAnimation(){
+
     const startValue = document.getElementById("Start-BFS-Value").value;
     const endValue = document.getElementById("End-BFS-Value").value;
     let speedValue = document.getElementById("Speed-BFS-Value").value;
@@ -63,11 +67,12 @@ function animateBFS(bfsOrder, speed) {
     });
 }
 
-function Reset (){
+function reset (){
     window.location.reload();
 }
 
 function display() {    
+
     d3.select(".visual").selectAll("svg").remove();
 
     const visualContainer = document.querySelector(".visual");
@@ -88,8 +93,7 @@ function display() {
         .style("justify-content", "center")
         .style("align-items", "center");
     
-    twoDArr = visualCanvas.append("g")
-        .attr("transform", `translate(${(visualWidth - gridW) / 2}, ${(visualHeight - gridH) / 2})`);
+    twoDArr = visualCanvas.append("g") .attr("transform", `translate(${(visualWidth - gridW) / 2}, ${(visualHeight - gridH) / 2})`);
 
     twoDArr.selectAll("rect")
         .data(dataset)
@@ -143,8 +147,11 @@ function runBFS(startNum, endNum) {
             let row = curr[0];
             let col = curr[1];
 
-            if (!isValid(vis, row, col)) { continue; }
+            if (!isValid(vis, row, col)) {
 
+                 continue; 
+
+                }
             vis[row][col] = true;
             const index = row * COL + col;
             const cell = dataset[index];
@@ -179,6 +186,6 @@ function runBFS(startNum, endNum) {
     return result;  
 }
 
-window.onload = function() {
-    display();
-};
+
+
+export{startBFSAnimation, reset, display, initDisplay};

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import {startDFSAnimation, reset, display, initDisplay} from '../context/dfs.js';
+import {startBFSAnimation, reset, display, initDisplay} from '../context/bfs.js';
 
-function DFS() {
+function BFS() {
 
   const visualRef = useRef(null);
   useEffect(() => {
@@ -29,15 +29,15 @@ function DFS() {
     <>
       <div className="user-input">
 
-        <h1 className="Title">DFS Algorithm</h1>
+        <h1 className="Title">BFS Algorithm</h1>
         
         <div className="input-container">
-          <input id="Speed-DFS-Value" type="text" placeholder="Enter Speed" />
-          <input id="Start-DFS-Value" type="text" placeholder="Enter Start Value" />
-          <input id="End-DFS-Value" type="text" placeholder="Enter End Value" />
+          <input id="Speed-BFS-Value" type="text" placeholder="Enter Speed" />
+          <input id="Start-BFS-Value" type="text" placeholder="Enter Start Value" />
+          <input id="End-BFS-Value" type="text" placeholder="Enter End Value" />
           
           <div className="action-buttons">
-            <button className="button" id="Add-Button" onClick={startDFSAnimation}>Start DFS</button>
+            <button className="button" id="Add-Button" onClick={startBFSAnimation}>Start BFS</button>
             <button className="button" id="Remove-Button" onClick={reset}>Reset</button>
           </div>
         </div>
@@ -56,4 +56,4 @@ function DFS() {
   );
 }
 
-export default DFS;
+export default BFS;
