@@ -11,6 +11,8 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .visual {
@@ -59,7 +61,7 @@ body {
 .user-input {
     width: 100%;
     background: linear-gradient(135deg, #ffffff, #e5e7eb);
-    padding: 20px 25px;
+    padding: 24px 28px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -67,14 +69,14 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 10;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 16px;
 }
 
 .input-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 16px;
     flex: 1;
 }
 
@@ -139,14 +141,14 @@ input::placeholder {
 
 .action-buttons {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .navigation-buttons {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 

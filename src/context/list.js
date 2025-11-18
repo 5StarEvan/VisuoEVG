@@ -52,7 +52,6 @@ function search() {
     dataStructureLinks.forEach(link => {
         const linkText = link.textContent.toLowerCase();
         const linkId = link.id.toLowerCase();
-
         if (linkText.includes(searchTerm) || linkId.includes(searchTerm)) {
             link.classList.remove('hidden');
             resultsFound = true;
@@ -86,7 +85,6 @@ function toggleClearButton(show) {
         clearButton.style.display = show ? 'block' : 'none';
     }
 }
-
 function searchEvL() {
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
@@ -98,9 +96,7 @@ function searchEvL() {
     }
     
     toggleClearButton(searchInput.value.trim() !== '');
-
     searchButton.addEventListener('click', search);
-
     searchInput.addEventListener('keyup', function(event) {
         if (event.key === 'Enter') {
             search();

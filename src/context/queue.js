@@ -25,10 +25,8 @@ function list() {
 function displayR(message, isSuccess = false) {
   const elementData = document.getElementById("addedElements");
   if (!elementData) return;
-  
   elementData.textContent = message;
   elementData.style.display = "block";
-  
   if (isSuccess) {
     elementData.style.borderColor = "#00CC66";
     elementData.style.backgroundColor = "rgba(0, 204, 102, 0.2)";
@@ -36,29 +34,24 @@ function displayR(message, isSuccess = false) {
     elementData.style.borderColor = "#FF9500";
     elementData.style.backgroundColor = "rgba(255, 149, 0, 0.2)";
   }
-  
   elementData.style.animation = "none";
   setTimeout(() => {
     elementData.style.animation = "fadeIn 0.5s ease-in-out";
   }, 10);
 }
-
 function reset() {
   queue.length = 0; 
   document.getElementById("Input-Value").value = "";
   displayR("Queue has been reset");
   display();
 }
-
 function addValue() {
   const inputElement = document.getElementById("Input-Value");
   const inputValue = inputElement.value.trim();
-
   if (inputValue === "") {
     displayR("Please enter a value!");
     return;
   }
-  
   const numericValue = Number(inputValue);
 
   if (!isNaN(numericValue)) {
@@ -68,10 +61,8 @@ function addValue() {
   } else {
     displayR("Please enter a valid number!"); 
   }
-
   display(true); 
 }
-
 function removeValue() {
   if (queue.length > 0) {
     const dequeuedValue = queue.shift(); 

@@ -21,7 +21,6 @@ function home() {
 function list() {
   window.location.href = "/list";
 }
-
 function reset() {
   dataset.length = 0; 
   display();
@@ -31,12 +30,10 @@ function reset() {
 function pushValue() {
   const inputElement = document.getElementById("Input-Value");
   const inputValue = inputElement.value.trim();
-
   if (inputValue === "") {
     displayR("Please enter a value!");
     return;
   }
-
   const numericValue = Number(inputValue);
 
   if (!isNaN(numericValue)) {
@@ -49,7 +46,6 @@ function pushValue() {
 
   display(true); 
 }
-
 function pop() {
   if (dataset.length > 0) {
     const poppedValue = dataset.pop();
@@ -67,7 +63,6 @@ function displayR(message, isSuccess = false) {
   
   elementData.textContent = message;
   elementData.style.display = "block";
-  
   if (isSuccess) {
     elementData.style.borderColor = "#00CC66";
     elementData.style.backgroundColor = "rgba(0, 204, 102, 0.2)";
@@ -75,7 +70,6 @@ function displayR(message, isSuccess = false) {
     elementData.style.borderColor = "#FF9500";
     elementData.style.backgroundColor = "rgba(255, 149, 0, 0.2)";
   }
-  
   elementData.style.animation = "none";
   setTimeout(() => {
     elementData.style.animation = "fadeIn 0.5s ease-in-out";

@@ -34,6 +34,8 @@ body {
   overflow-y: auto;
   min-height: 100%;
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 .app-container {

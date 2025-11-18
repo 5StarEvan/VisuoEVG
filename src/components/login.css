@@ -8,10 +8,17 @@
 body {
     background-color: #f0f2f5;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    margin: 0;
 }
 
 .container {
@@ -36,21 +43,21 @@ body {
 }
 
 .login-header {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .login-header h1 {
     font-size: 26px;
     color: #212121;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-weight: 600;
 }
 
 .login-header p {
     color: #757575;
     font-size: 14px;
-    line-height: 1.4;
-    margin-bottom: 10px;
+    line-height: 1.5;
+    margin-bottom: 0;
 }
 
 
@@ -67,12 +74,12 @@ body {
 }
 
 .input-group {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     color: #424242;
     font-size: 13px;
     font-weight: 500;
@@ -95,7 +102,7 @@ body {
 
 .forgot-password {
     text-align: right;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
 }
 
 .forgot-password a {
@@ -111,8 +118,9 @@ body {
 
 .button-group {
     display: flex;
-    gap: 10px;
-    margin-top: 15px;
+    gap: 12px;
+    margin-top: 8px;
+    margin-bottom: 0;
 }
 
 .button {
@@ -134,7 +142,7 @@ body {
 }
 
 .signup-link {
-    margin-top: 20px;
+    margin-top: 24px;
     text-align: center;
     font-size: 14px;
     color: #757575;

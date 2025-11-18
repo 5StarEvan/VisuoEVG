@@ -21,7 +21,6 @@ window.onload = function() {
    initMatrixBackground();
    initNavbarMatrix();
 };
-
 function showFlashMessage(message) {
    const existingFlashMsg = document.querySelector('.flash-message');
    if (existingFlashMsg) {
@@ -52,7 +51,6 @@ function showFlashMessage(message) {
        }, 500);
    }, 3000);
 }
-
 function initMatrixBackground() {
    const canvas = document.querySelector('.matrix-background');
    if (!canvas) return;
@@ -97,14 +95,11 @@ function initMatrixBackground() {
            drops[i]++;
        }
    }
-   
    setInterval(draw, 50);
 }
-
 function initNavbarMatrix() {
    const navbar = document.querySelector('.nav-bar');
-   if (!navbar) return;
-   
+   if (!navbar) return; 
    const canvas = document.createElement('canvas');
    canvas.className = 'navbar-matrix';
    canvas.style.position = 'absolute';
@@ -124,18 +119,14 @@ function initNavbarMatrix() {
    if (navLinks) navLinks.style.position = 'relative';
    if (title) title.style.position = 'relative';
    if (navLinks) navLinks.style.zIndex = '10';
-   if (title) title.style.zIndex = '10';
-   
-   const ctx = canvas.getContext('2d');
-   
+   if (title) title.style.zIndex = '10';  
+   const ctx = canvas.getContext('2d');  
    function setCanvasSize() {
        canvas.width = navbar.offsetWidth;
        canvas.height = navbar.offsetHeight;
    }
-   
    setCanvasSize();
    window.addEventListener('resize', setCanvasSize);
-   
    const matrixChars = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()";
    const fontSize = 8;
    const columns = Math.floor(canvas.width / fontSize);
@@ -151,7 +142,6 @@ function initNavbarMatrix() {
        
        ctx.fillStyle = '#4fa8f7';
        ctx.font = `${fontSize}px monospace`;
-       
        for (let i = 0; i < drops.length; i++) {
            const text = matrixChars[Math.floor(Math.random() * matrixChars.length)];
            const x = i * fontSize;
@@ -161,8 +151,7 @@ function initNavbarMatrix() {
            
            if (y > canvas.height || Math.random() > 0.98) {
                drops[i] = 0;
-           }
-           
+           }        
            drops[i]++;
        }
    }

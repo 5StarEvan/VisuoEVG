@@ -12,17 +12,14 @@ function displayR(message, isSuccess = false) {
     const elementData = document.getElementById("addedElements");
     elementData.textContent = message;
     elementData.style.display = "block";
-    
     if (isSuccess) {
         elementData.style.borderColor = "#00CC66";
         elementData.style.backgroundColor = "rgba(0, 204, 102, 0.2)";
     } 
-    
     else {
         elementData.style.borderColor = "#FF9500";
         elementData.style.backgroundColor = "rgba(255, 149, 0, 0.2)";
     }
-    
     elementData.style.animation = "none";
     setTimeout(() => {elementData.style.animation = "fadeIn 0.5s ease-in-out";}, 10);
 }
@@ -52,7 +49,6 @@ function startBFSAnimation(){
         console.log(BFSresult);
     }
 }
-
 function animateBFS(bfsOrder, speed) {
     twoDArr.selectAll("rect")
         .attr("fill", "#3498db");
@@ -86,8 +82,7 @@ function display() {
     
     visualCanvas = d3.select(".visual")
         .append("svg")
-        .attr("width", visualWidth)
-        .attr("height", visualHeight)
+        .attr("width", visualWidth).attr("height", visualHeight)
         .style("position", "absolute")
         .style("display", "flex")
         .style("justify-content", "center")
@@ -97,10 +92,8 @@ function display() {
 
     twoDArr.selectAll("rect")
         .data(dataset)
-        .enter()
-        .append("rect")
-        .attr("x", (d, i) => (i % numCol) * gridSize)
-        .attr("y", (d, i) => Math.floor(i / numCol) * gridSize) 
+        .enter().append("rect")
+        .attr("x", (d, i) => (i % numCol) * gridSize).attr("y", (d, i) => Math.floor(i / numCol) * gridSize) 
         .attr("width", 60)
         .attr("height", 60) 
         .attr("fill", "#3498db")
@@ -109,12 +102,8 @@ function display() {
         .attr("rx", 5) 
         .attr("ry", 5);
 
-    twoDArr.selectAll("text")
-        .data(dataset)
-        .enter()
-        .append("text")
-        .attr("x", (d, i) => (i % numCol) *  gridSize + 30) 
-        .attr("y", (d, i) => Math.floor(i / numCol) * gridSize+  30) 
+    twoDArr.selectAll("text") .data(dataset) .enter().append("text")
+        .attr("x", (d, i) => (i % numCol) *  gridSize + 30) .attr("y", (d, i) => Math.floor(i / numCol) * gridSize+  30) 
         .attr("text-anchor", "middle")
         .attr("dominant-baseline", "middle") 
         .style("font-size", "16px")

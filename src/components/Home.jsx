@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const MatrixBackground = () => {
   const canvasRef = useRef(null);
@@ -63,13 +64,14 @@ const MatrixBackground = () => {
 };
 
 function Home() {
+  const navigate = useNavigate();
   
   const login = () => {
-    console.log('Login clicked');
+    navigate('/login');
   };
 
   const signup = () => {
-    console.log('Signup clicked');
+    navigate('/signup');
   };
 
   return (

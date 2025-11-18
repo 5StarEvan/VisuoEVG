@@ -6,6 +6,8 @@ import Queue from "./components/Queue.jsx";
 import Stack from "./components/Stack.jsx";
 import DFS from "./components/DFS.jsx";
 import BFS from "./components/BFS.jsx";
+import LoginPage from "./components/Login.jsx";
+import SignupForm from "./components/Signup.jsx";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home/>} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/signup" element={<SignupForm/>} />
         <Route path="/list" element={<List/>} />
         <Route path="/linkedlist" element={<Linkedlist/>} />
         <Route path="/queue" element={<Queue/>} />
