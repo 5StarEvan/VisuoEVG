@@ -24,7 +24,7 @@ Welcome to VisuoEVG, a platform that provides interactive visualizations for var
 
 VisuoEG was created and developed by Evan Guo. It serves the purpose of providing a visual representation of challenging algorithms and data structures in computer science, a topic that often stumps students at first.
 
-# Project is still in development ...
+# Project development has been paused ...
 
 ![image](https://github.com/user-attachments/assets/a3e829c0-3175-4c22-ad72-94a1f18a1d7b)
 
