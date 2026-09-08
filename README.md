@@ -1,4 +1,4 @@
-# VisuoEVG
+# VisuoEVG [Paused]
 
 Welcome to VisuoEVG, a platform that provides interactive visualizations for various data structures and algorithms. This tool helps users gain a deeper understanding of how data structures and algorithms function through real-time graphical representations.
 
